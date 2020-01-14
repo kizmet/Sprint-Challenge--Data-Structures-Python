@@ -46,9 +46,23 @@ def dicts():
     [duplicates.append(dupe) for dupe in dupes]
 
 
+def norules():
+    a = set(names_1)
+    b = set(names_2)
+    duplicates = a & b
+    # duplicates = set(names_1) & set(names_2)
+
+
+def compren():
+    duplicates = [i for i in set(names_1) if i in set(names_2)]
+
+
 # defaultFunction()
 # bst()  # runtime: 0.11512303352355957 seconds
-dicts()  # runtime: 0.0046770572662353516 seconds
+# dicts()  # runtime: 0.0046770572662353516 seconds
+norules()  # runtime: 0.00410914421081543 seconds
+# compren() #runtime: 3.0023200511932373 seconds
+
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
